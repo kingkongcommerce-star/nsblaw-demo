@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neil Sullivan &amp; Bathersby Solicitors | Stanthorpe QLD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#10233F;
+    --navy-deep:#0A1830;
+    --gold:#C9A227;
+    --offwhite:#F7F6F3;
+    --charcoal:#2B2B2B;
+    --offwhite-text:#F2F0EA;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Inter',Arial,sans-serif;
+    color:var(--charcoal);
+    background:var(--offwhite);
+    line-height:1.55;
+  }
+  h1,h2,h3{font-family:'Lora',Georgia,serif;font-weight:700;color:var(--navy);}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:1180px;margin:0 auto;padding:0 32px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--navy);
+    box-shadow:0 2px 14px rgba(0,0,0,0.18);
+  }
+  .nav-wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;max-width:1180px;margin:0 auto;
+  }
+  .logo{
+    font-family:'Lora',serif;font-weight:700;font-size:21px;color:#fff;letter-spacing:0.3px;
+  }
+  .logo span{color:var(--gold);}
+  nav ul{display:flex;gap:30px;list-style:none;}
+  nav a{color:var(--offwhite-text);font-weight:500;font-size:15px;letter-spacing:0.3px;}
+  nav a:hover{color:var(--gold);}
+  .nav-cta{
+    display:flex;align-items:center;gap:22px;
+  }
+  .phone-link{color:#fff;font-weight:600;font-size:15px;white-space:nowrap;}
+  .btn{
+    display:inline-block;background:var(--gold);color:var(--navy-deep);
+    font-weight:700;padding:12px 26px;border-radius:4px;font-size:15px;
+    letter-spacing:0.2px;transition:transform .15s ease, box-shadow .15s ease;
+    min-height:44px;line-height:20px;
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(201,162,39,0.35);}
+
+  .hero{
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:#fff;padding:82px 0 92px;
+    position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-120px;width:520px;height:520px;
+    border-radius:50%;background:radial-gradient(circle, rgba(201,162,39,0.14) 0%, rgba(201,162,39,0) 70%);
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:center;position:relative;z-index:2;
+  }
+  .hero-eyebrow{
+    color:var(--gold);font-weight:600;letter-spacing:2px;font-size:13px;text-transform:uppercase;margin-bottom:18px;
+  }
+  .hero h1{
+    color:#fff;font-size:44px;line-height:1.2;margin-bottom:22px;
+  }
+  .hero p.lead{
+    font-size:18px;color:#D8DEE8;max-width:480px;margin-bottom:34px;
+  }
+  .hero-ctas{display:flex;gap:16px;align-items:center;flex-wrap:wrap;}
+  .btn-outline{
+    border:1.5px solid rgba(255,255,255,0.5);color:#fff;padding:12px 24px;border-radius:4px;font-weight:600;font-size:15px;
+    min-height:44px;line-height:20px;
+  }
+  .hero-microcopy{margin-top:18px;color:#B9C2D1;font-size:14px;}
+  .hero-photo{
+    background:#1A3056;border-radius:10px;aspect-ratio:4/5;position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 30px 60px rgba(0,0,0,0.35);
+    border:1px solid rgba(201,162,39,0.25);
+  }
+  .hero-photo .avatar-mark{
+    width:150px;height:150px;border-radius:50%;background:linear-gradient(145deg,#2A4470,#162A4D);
+    display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-size:42px;color:var(--gold);
+    border:2px solid rgba(201,162,39,0.4);
+  }
+  .hero-photo .cap{
+    position:absolute;bottom:0;left:0;right:0;padding:18px 20px;background:rgba(10,24,48,0.75);
+    font-size:13px;color:#CBD4E3;text-align:center;letter-spacing:0.3px;
+  }
+
+  .trust-bar{
+    background:#fff;border-bottom:1px solid #E7E3D9;padding:26px 0;
+  }
+  .trust-row{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:22px;
+  }
+  .trust-item{
+    display:flex;align-items:center;gap:10px;color:#5A5A52;font-size:14px;font-weight:600;letter-spacing:0.2px;
+  }
+  .trust-item .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);}
+
+  .section{padding:88px 0;}
+  .section-head{max-width:620px;margin:0 auto 52px;text-align:center;}
+  .section-eyebrow{
+    color:var(--gold);font-weight:700;letter-spacing:2px;font-size:13px;text-transform:uppercase;margin-bottom:12px;
+  }
+  .section h2{font-size:34px;margin-bottom:14px;}
+  .section-sub{color:#6B6B63;font-size:16px;}
+
+  .practice-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:28px;
+  }
+  .practice-card{
+    background:#fff;border:1px solid #E7E3D9;border-radius:10px;padding:34px 30px;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .practice-card:hover{
+    transform:translateY(-4px);box-shadow:0 20px 40px rgba(16,35,63,0.1);border-color:var(--gold);
+  }
+  .practice-icon{
+    width:48px;height:48px;border-radius:9px;background:var(--navy);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;font-family:'Lora',serif;
+  }
+  .practice-card h3{font-size:19px;margin-bottom:10px;}
+  .practice-card p{color:#6B6B63;font-size:14.5px;margin-bottom:16px;}
+  .practice-card a{color:var(--navy);font-weight:700;font-size:14px;}
+  .practice-card a::after{content:" →";color:var(--gold);}
+
+  .results{background:var(--navy);color:#fff;}
+  .results .section-eyebrow{color:var(--gold);}
+  .results h2{color:#fff;}
+  .results .section-sub{color:#B9C2D1;}
+  .results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .result-card{
+    background:rgba(255,255,255,0.04);border:1px solid rgba(201,162,39,0.25);border-radius:10px;
+    padding:34px 26px;text-align:center;
+  }
+  .result-figure{font-family:'Lora',serif;font-size:30px;color:var(--gold);font-weight:700;margin-bottom:10px;}
+  .result-type{font-weight:600;margin-bottom:8px;}
+  .result-desc{color:#B9C2D1;font-size:14px;}
+
+  .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .testimonial-card{
+    background:#fff;border:1px solid #E7E3D9;border-radius:10px;padding:30px;
+  }
+  .stars{color:var(--gold);font-size:16px;margin-bottom:14px;letter-spacing:2px;}
+  .testimonial-card p.quote{font-size:15px;color:#3B3B35;margin-bottom:18px;font-style:italic;}
+  .testimonial-name{font-weight:700;font-size:14.5px;color:var(--navy);}
+  .testimonial-case{color:#8A8A80;font-size:13px;}
+
+  .attorney-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
+  .attorney-card{
+    background:#fff;border:1px solid #E7E3D9;border-radius:10px;overflow:hidden;
+    display:flex;
+  }
+  .attorney-photo{
+    width:150px;flex-shrink:0;background:linear-gradient(145deg,var(--navy),var(--navy-deep));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .attorney-photo .avatar-mark{
+    width:76px;height:76px;border-radius:50%;background:rgba(201,162,39,0.14);
+    display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-size:24px;color:var(--gold);
+    border:1.5px solid rgba(201,162,39,0.4);
+  }
+  .attorney-info{padding:24px 26px;}
+  .attorney-info h3{font-size:18px;margin-bottom:4px;}
+  .attorney-title{color:var(--gold);font-weight:600;font-size:13px;margin-bottom:12px;letter-spacing:0.3px;}
+  .attorney-info p{color:#6B6B63;font-size:14px;}
+
+  .cta-band{
+    background:linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:#fff;padding:62px 0;text-align:center;
+  }
+  .cta-band h2{color:#fff;font-size:28px;margin-bottom:14px;}
+  .cta-band p{color:#B9C2D1;margin-bottom:28px;font-size:16px;}
+  .cta-band-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+  footer{background:var(--navy-deep);color:#8C97AC;padding:46px 0 28px;font-size:13.5px;}
+  .footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:28px;}
+  .footer-col h4{color:#fff;font-family:'Lora',serif;font-size:15px;margin-bottom:12px;}
+  .footer-col p, .footer-col a{color:#8C97AC;display:block;margin-bottom:7px;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  .demo-badge{
+    display:inline-block;background:var(--gold);color:var(--navy-deep);font-weight:700;font-size:11px;
+    padding:4px 10px;border-radius:3px;letter-spacing:0.5px;margin-left:10px;vertical-align:middle;
+  }
+
+  .sticky-cta{
+    position:fixed;bottom:0;left:0;right:0;background:var(--navy-deep);
+    padding:14px 20px;display:none;justify-content:space-between;align-items:center;z-index:60;
+    box-shadow:0 -4px 20px rgba(0,0,0,0.25);
+  }
+
+  .intake{background:#fff;}
+  .intake-grid{display:grid;grid-template-columns:1fr 0.9fr;gap:48px;align-items:start;}
+  .intake-form{background:var(--offwhite);border:1px solid #E7E3D9;border-radius:10px;padding:32px;}
+  .intake-form label{display:block;font-size:13.5px;font-weight:600;color:var(--navy);margin-bottom:6px;}
+  .intake-form input, .intake-form select, .intake-form textarea{
+    width:100%;padding:12px 14px;margin-bottom:18px;border:1px solid #D9D4C8;border-radius:5px;font-size:14.5px;
+    font-family:'Inter',sans-serif;min-height:44px;
+  }
+  .intake-form textarea{min-height:90px;}
+
+  @media(max-width:980px){
+    nav ul{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-photo{max-width:320px;margin:0 auto;}
+    .practice-grid, .results-grid, .testimonial-grid, .attorney-grid, .intake-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:32px;}
+    .sticky-cta{display:flex;}
+    body{padding-bottom:70px;}
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-wrap">
+      <div class="logo">Neil Sullivan <span>&amp;</span> Bathersby</div>
+      <nav>
+        <ul>
+          <li><a href="#practice">Practice Areas</a></li>
+          <li><a href="#results">Why Choose Us</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#solicitors">Our Solicitors</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a class="phone-link" href="tel:+61746811100">(07) 4681 1100</a>
+        <a class="btn" href="#contact">Free Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-eyebrow">Solicitors Serving Stanthorpe &amp; The Granite Belt</div>
+        <h1>Straightforward Legal Advice, From People Who Know This Town.</h1>
+        <p class="lead">Conveyancing, business law, and estate matters handled by solicitors who've worked in Stanthorpe for years — not a city firm that's never set foot here.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#contact">Book a Free Consultation</a>
+          <a class="btn-outline" href="tel:+61746811100">Call (07) 4681 1100</a>
+        </div>
+        <div class="hero-microcopy">Serving the Granite Belt &nbsp;·&nbsp; Conveyancing &amp; Business Law &nbsp;·&nbsp; Local since Stanthorpe's early days</div>
+      </div>
+      <div class="hero-photo">
+        <div class="avatar-mark">NS&amp;B</div>
+        <div class="cap">37 Railway Street, Stanthorpe — real office photo goes here</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-bar">
+    <div class="container trust-row">
+      <div class="trust-item"><span class="dot"></span> Queensland Law Society Registered</div>
+      <div class="trust-item"><span class="dot"></span> Serving Stanthorpe &amp; Granite Belt</div>
+      <div class="trust-item"><span class="dot"></span> Conveyancing &amp; Business Law</div>
+      <div class="trust-item"><span class="dot"></span> Succession &amp; Elder Law</div>
+    </div>
+  </div>
+
+  <section class="section" id="practice">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">What We Handle</div>
+        <h2>Practice Areas</h2>
+        <p class="section-sub">Focused legal services for individuals, families and businesses across the Granite Belt region.</p>
+      </div>
+      <div class="practice-grid">
+        <div class="practice-card">
+          <div class="practice-icon">⌂</div>
+          <h3>Conveyancing</h3>
+          <p>Buying or selling property in Stanthorpe or the Granite Belt — handled start to finish, no surprises.</p>
+          <a href="#contact">Free Consultation</a>
+        </div>
+        <div class="practice-card">
+          <div class="practice-icon">⬡</div>
+          <h3>Corporations &amp; Business Law</h3>
+          <p>Formation, contracts and disputes for local businesses and rural operations.</p>
+          <a href="#contact">Talk to Our Team</a>
+        </div>
+        <div class="practice-card">
+          <div class="practice-icon">§</div>
+          <h3>Criminal Law</h3>
+          <p>Straightforward, discreet representation when it matters most.</p>
+          <a href="#contact">Speak to a Solicitor</a>
+        </div>
+        <div class="practice-card">
+          <div class="practice-icon">⚖</div>
+          <h3>Succession &amp; Elder Law</h3>
+          <p>Wills, probate and planning that protects what you've built for the people who matter most.</p>
+          <a href="#contact">Plan Your Estate</a>
+        </div>
+        <div class="practice-card">
+          <div class="practice-icon">⌘</div>
+          <h3>Property — Residential</h3>
+          <p>Leasing, titles and residential property matters across the region.</p>
+          <a href="#contact">Get Advice</a>
+        </div>
+        <div class="practice-card">
+          <div class="practice-icon">⚑</div>
+          <h3>Litigation &amp; Disputes</h3>
+          <p>Clear-headed advice when a dispute needs resolving, in or out of court.</p>
+          <a href="#contact">Discuss Your Matter</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section results" id="results">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Why Local Clients Choose Us</div>
+        <h2>A Firm That Knows The Granite Belt</h2>
+        <p class="section-sub">Real experience, real local knowledge — not a call centre in another state.</p>
+      </div>
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-figure">Local</div>
+          <div class="result-type">Based In Stanthorpe</div>
+          <div class="result-desc">On Railway Street, serving clients across the Granite Belt region for years.</div>
+        </div>
+        <div class="result-card">
+          <div class="result-figure">QLS</div>
+          <div class="result-type">Queensland Law Society Registered</div>
+          <div class="result-desc">Fully registered solicitors held to the Queensland Law Society's professional standards.</div>
+        </div>
+        <div class="result-card">
+          <div class="result-figure">Direct</div>
+          <div class="result-type">You Deal With Your Solicitor</div>
+          <div class="result-desc">No call centres or case handlers — you speak directly with the solicitor on your matter.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">What Clients Say</div>
+        <h2>Client Testimonials</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Handled our property settlement without a single hiccup. Always available on the phone when we had questions."</p>
+          <div class="testimonial-name">Margaret S.</div>
+          <div class="testimonial-case">Conveyancing Client</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Sorted out my late father's estate with real care and patience. Explained everything in plain English."</p>
+          <div class="testimonial-name">Robert D.</div>
+          <div class="testimonial-case">Succession Law Client</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Great to deal with a local firm that actually understands the area and the people in it."</p>
+          <div class="testimonial-name">Karen F.</div>
+          <div class="testimonial-case">Business Law Client</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="solicitors" style="background:#fff;">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-eyebrow">Meet The Team</div>
+        <h2>Our Solicitors</h2>
+      </div>
+      <div class="attorney-grid">
+        <div class="attorney-card">
+          <div class="attorney-photo"><div class="avatar-mark">SS</div></div>
+          <div class="attorney-info">
+            <h3>Stephen Sullivan</h3>
+            <div class="attorney-title">Solicitor — Conveyancing &amp; Succession Law</div>
+            <p>Long-standing local solicitor focused on conveyancing, elder law and succession matters for Granite Belt clients.</p>
+          </div>
+        </div>
+        <div class="attorney-card">
+          <div class="attorney-photo"><div class="avatar-mark">AS</div></div>
+          <div class="attorney-info">
+            <h3>Alasdair Stewart</h3>
+            <div class="attorney-title">Solicitor — Property &amp; Business Law</div>
+            <p>Advises local businesses and residential property clients across Stanthorpe and the surrounding region.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section intake" id="contact">
+    <div class="container intake-grid">
+      <div>
+        <div class="section-eyebrow">Get In Touch</div>
+        <h2>Book A Free Consultation</h2>
+        <p class="section-sub">Tell us a bit about your matter and we'll get back to you — no obligation, no pressure.</p>
+        <div style="margin-top:28px;">
+          <a class="btn-outline" style="border-color:#D9D4C8;color:var(--navy);display:inline-block;" href="tel:+61746811100">Call (07) 4681 1100</a>
+        </div>
+      </div>
+      <form class="intake-form">
+        <label for="name">Full Name</label>
+        <input id="name" type="text" placeholder="Your name">
+        <label for="phone">Phone</label>
+        <input id="phone" type="tel" placeholder="Your phone number">
+        <label for="matter">What's This About?</label>
+        <select id="matter">
+          <option>Conveyancing</option>
+          <option>Business Law</option>
+          <option>Wills &amp; Estates</option>
+          <option>Other</option>
+        </select>
+        <label for="details">Brief Details</label>
+        <textarea id="details" placeholder="A short description of your matter"></textarea>
+        <a class="btn" href="tel:+61746811100" style="width:100%;text-align:center;display:block;">Request a Callback</a>
+      </form>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Free Consultation. No Obligation.</h2>
+      <p>Call us or send a message — we'll tell you exactly where you stand.</p>
+      <div class="cta-band-actions">
+        <a class="btn" href="tel:+61746811100">Call (07) 4681 1100</a>
+        <a class="btn-outline" href="mailto:info@nsblaw.com.au">Email Our Office</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Neil Sullivan &amp; Bathersby</h4>
+          <p>37 Railway Street</p>
+          <p>Stanthorpe, QLD 4380</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="tel:+61746811100">(07) 4681 1100</a>
+          <a href="mailto:info@nsblaw.com.au">info@nsblaw.com.au</a>
+        </div>
+        <div class="footer-col">
+          <h4>Practice Areas</h4>
+          <a href="#practice">Conveyancing</a>
+          <a href="#practice">Business Law</a>
+          <a href="#practice">Succession Law</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Neil Sullivan &amp; Bathersby Solicitors. Prior results do not guarantee a similar outcome.</span>
+        <span class="demo-badge">DEMO TEMPLATE</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-cta">
+    <a class="phone-link" href="tel:+61746811100" style="color:#fff;">(07) 4681 1100</a>
+    <a class="btn" href="#contact">Free Consultation</a>
+  </div>
+
+</body>
+</html>
